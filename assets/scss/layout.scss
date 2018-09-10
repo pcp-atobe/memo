@@ -8,8 +8,6 @@ html{
 body{
   position: relative;
   min-height: 100vh;
-  padding-top: 100px;
-  padding-bottom: 200px;
   font-size: 1.4rem;
   background-color: $c_main;
   @media screen and (max-width:$screen-xs-max){

@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import 'firebase/storage'
+import { mapMutations } from 'vuex'
 
 if (!firebase.apps.length) {
   firebase.initializeApp(
@@ -14,8 +14,9 @@ if (!firebase.apps.length) {
   )
 }
 
+const provider = new firebase.auth.GoogleAuthProvider();
 const FIREBASE_DB = firebase.database()
 const FIREBASE_AUTH = firebase.auth()
-const FIREBASE_STORAGE = firebase.storage()
+const user = firebase.auth().currentUser
 
-export { FIREBASE_DB, FIREBASE_AUTH, FIREBASE_STORAGE, firebase }
+export { FIREBASE_DB, FIREBASE_AUTH, firebase ,provider}

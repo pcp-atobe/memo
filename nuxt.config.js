@@ -30,15 +30,18 @@ module.exports = {
 
   modules: [
     '@nuxtjs/dotenv',
+    '@nuxtjs/axios',
     ['nuxt-sass-resources-loader', '@/assets/scss/variable.scss']
   ],
+
+  axios: {
+  },
 
   css: [
     '@/assets/scss/reset.scss',
     '@/assets/scss/variable.scss',
     '@/assets/scss/layout.scss',
     '@/assets/scss/common.scss',
-    '@/assets/scss/markdown.scss',
     '@fortawesome/fontawesome-free-webfonts',
     '@fortawesome/fontawesome-free-webfonts/css/fa-brands.css',
     '@fortawesome/fontawesome-free-webfonts/css/fa-regular.css',

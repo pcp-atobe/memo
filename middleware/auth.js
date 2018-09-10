@@ -1,5 +1,7 @@
 import {FIREBASE_AUTH,firebase} from '@/plugins/firebase'
 
 export default function ({ store, route, redirect }) {
-  // console.log(store.state.CURRENT_USER)
+  firebase.auth().onAuthStateChanged(function(user) {
+    console.log(user)
+  });
 }
