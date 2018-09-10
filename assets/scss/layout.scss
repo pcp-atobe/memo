@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@import "variable";
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  position: relative;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  font-size: 1.4rem;
+  background-color: $c_main;
+  @media screen and (max-width:$screen-xs-max){
+    padding-top: 30px;
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+.l-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+}
+
+.l-container{
+  width: 1054px;
+  padding: 0 15px;
+  margin: 20px auto 0;
+  @media screen and (max-width:$screen-sm-max){
+    width: 100%;
+  }
+}
+
+.l-footer{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  width: 100%;
+}

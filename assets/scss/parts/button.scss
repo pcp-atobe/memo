@@ -1,0 +1,35 @@
+.btn{
+  padding: 8px 20px;
+  background:none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background-color: #fff;
+  font-size: 1.2rem;
+  &[disabled]{
+    background-color: #ccc;
+  }
+  i{
+    margin-right: 8px;
+  }
+  &:hover{
+    border-style: dotted;
+  }
+  &.-blue{
+    background-color: #5d4dff;
+    color: #fff;
+  }
+  &.-red{
+    background-color: #e32e2e;
+    color: #fff;
+  }
+  &.-green{
+    background-color: #40983f;
+    color: #fff;
+  }
+}
