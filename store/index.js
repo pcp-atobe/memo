@@ -15,7 +15,8 @@ export const actions = {
   doLogin ({commit}) {
     firebase.auth().signInWithPopup(provider).then(function(result) {
       commit('setUserID',result.user.uid)
-      window.location.href = '/'
+      // window.location.href="/"
+      // this.$router.push('/')
     }).catch(function(error) {});
   }
 }
