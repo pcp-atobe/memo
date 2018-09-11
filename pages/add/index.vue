@@ -9,15 +9,16 @@
 </template>
 
 <script>
-import {firebase, FIREBASE_DB} from '@/plugins/firebase'
+import {firebase, FIREBASE_DB,FIREBASE_AUTH} from '@/plugins/firebase'
 import axios from 'axios'
 const URL = 'https://' + process.env.PROJECTID + '.firebaseio.com/'
 
 export default {
+
   data: function(){
     return {
       text: null,
-      submitFlag: true
+      submitFlag: true,
     }
   },
 
@@ -29,7 +30,7 @@ export default {
         "date": date,
         "content": _this.text
       }
-      FIREBASE_DB.ref('user').push(data, (err) => {
+      FIREBASE_DB.ref(_this.$store.state.CURRENT_USER_ID + '/memo').push(data, (err) => {
         if(!err){
           _this.$router.push('/')
         }

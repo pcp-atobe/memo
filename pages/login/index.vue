@@ -3,17 +3,31 @@
     .l-container
       .login
         .login-button(@click="login") Googleでログイン
+        .login-logout.btn(@click="logout") ログアウト
 </template>
 
 <script>
 import {firebase, provider} from '@/plugins/firebase'
+import { mapActions } from 'vuex'
 
 export default {
-  created: function(){},
+  created: function(){
+
+  },
 
   methods: {
+    ...mapActions([
+      'doLogin',
+    ]),
+
     login: function(){
-      firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+      this.doLogin()
+    },
+
+    logout: function(){
+      firebase.auth().signOut().then(function() {
+        console.log("Signed out.");
+      });
     }
   }
 }

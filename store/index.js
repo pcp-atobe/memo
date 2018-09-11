@@ -1,21 +1,21 @@
-import {FIREBASE_AUTH, firebase} from '@/plugins/firebase'
+import {FIREBASE_AUTH, firebase,provider} from '@/plugins/firebase'
 export const strict = false
 
 export const state = () => ({
-  CURRENT_USER: null,
+  CURRENT_USER_ID: null
 })
 
 export const mutations = {
-  setUser (state, payload) {
-    state.CURRENT_USER = payload
+  setUserID (state, payload) {
+    state.CURRENT_USER_ID = payload
   }
 }
 
 export const actions = {
-}
-
-export const getters = {
-  isAuthenticated (state) {
-    return !!state.CURRENT_USER
+  doLogin ({commit}) {
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      commit('setUserID',result.user.uid)
+      window.location.href = '/'
+    }).catch(function(error) {});
   }
 }

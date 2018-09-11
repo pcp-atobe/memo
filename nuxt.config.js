@@ -25,6 +25,7 @@ module.exports = {
   },
 
   plugins: [
+    { src: '@/plugins/authenticated.js' },
     { src: '@/plugins/localStorage.js', ssr: false }
   ],
 
@@ -34,8 +35,7 @@ module.exports = {
     ['nuxt-sass-resources-loader', '@/assets/scss/variable.scss']
   ],
 
-  axios: {
-  },
+  axios: {},
 
   css: [
     '@/assets/scss/reset.scss',

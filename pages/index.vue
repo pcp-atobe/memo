@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {firebase} from '@/plugins/firebase'
+import {firebase,FIREBASE_AUTH} from '@/plugins/firebase'
 import axios from 'axios'
 import moment from 'moment'
 const URL = 'https://' + process.env.PROJECTID + '.firebaseio.com/'
@@ -27,10 +27,13 @@ export default {
     }
   },
 
-  created: function() {
-    axios.get(URL + 'user/.json').then( (res) => {
-      this.listItem = res.data;
-    });
+  mounted: function() {
+    const _this = this
+    setTimeout(() => {
+      axios.get(URL + _this.$store.state.CURRENT_USER_ID + '/memo/.json').then( (res) => {
+        _this.listItem = res.data;
+      });
+    })
   },
 
   methods: {

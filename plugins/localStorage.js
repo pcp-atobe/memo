@@ -7,7 +7,7 @@ export default ({app, store, isHMR}) => {
     window.onNuxtReady((nuxt) => {
       createPersistedState({
           key: 'Login_User',
-          paths: ['CURRENT_USER']
+          paths: ['CURRENT_USER_ID']
       })(store)
     });
   }
